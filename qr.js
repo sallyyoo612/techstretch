@@ -1,10 +1,14 @@
 var qr = require('qr-image');
  
-var qr_svg = qr.image('I love QR!', { type: 'svg' });
-qr_svg.pipe(require('fs').createWriteStream('i_love_qr.svg'));
- 
-var svg_string = qr.imageSync('I love QR!', { type: 'svg' });
+// var svg_string = qr.imageSync('I love QR!', { type: 'svg' });
+
+function qrGenerator (serial) {
+	var qr_svg = qr.image(serial, { type: 'svg' });
+	qr_svg.pipe(require('fs').createWriteStream(serial +'.svg'));
+
+}
 
 console.log (qr_svg)
 console.log (svg_string)
- 
+
+module.exports = qrGenerator;		
