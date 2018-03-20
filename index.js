@@ -3,6 +3,7 @@ const parser = require('body-parser');
 const path = require('path');
 const uuidv4 = require('uuid/v4');
 const Blockchain = require('./blockchain.js');
+const qr = require('./qr.js')
 
 const app = express();
 

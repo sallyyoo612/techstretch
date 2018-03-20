@@ -29,11 +29,16 @@ class Blockchain {
 		return block;
 	}
 
-	newTransaction(sender,recipient,ID) {
+	newTransaction(sender,recipient,serial,photoUrl,manufacturer,type) {
 		let transaction = { 
 			sender: sender,
 			recipient: recipient, 
-			ID: ID
+			object: {
+				serial: serial,
+				photoUrl: photoUrl, 
+				manufacturer: manufacturer,
+				type: type
+			}
 		}
 		this.currentTransactions.push(transaction);
 
