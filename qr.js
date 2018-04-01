@@ -8,7 +8,4 @@ function qrGenerator (serial) {
 
 }
 
-console.log (qr_svg)
-console.log (svg_string)
-
 module.exports = qrGenerator;		

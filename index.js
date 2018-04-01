@@ -9,6 +9,7 @@ const app = express();
 
 app.use(parser.json());
 app.use(parser.urlencoded( {extended: false} )); 
+app.use(express.static(path.join(__dirname, './public')))
 
 let chain = new Blockchain(); 
 let nodeIdentifier = uuidv4();
